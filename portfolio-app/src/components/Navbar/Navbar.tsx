@@ -3,6 +3,24 @@ import "./Navbar.css";
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleTheme = () => {
+        const newTheme = !isDarkMode;
+        setIsDarkMode(newTheme);
+        document.documentElement.setAttribute(
+            "data-theme",
+            newTheme ? "dark" : "light"
+        );
+        localStorage.setItem("theme", newTheme ? "dark" : "light");
+    };
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const prefersDark = savedTheme === "dark";
+        setIsDarkMode(prefersDark);
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -74,6 +92,9 @@ const Navbar: React.FC = () => {
                     <button className="cv-download-btn" onClick={downloadCV}>
                         <span className="cv-icon">⬇️</span>
                         View my CV
+                    </button>
+                    <button className="theme-toggle" onClick={toggleTheme}>
+                        {isDarkMode ? "☀️" : "🌙"}
                     </button>
                 </div>
             </div>

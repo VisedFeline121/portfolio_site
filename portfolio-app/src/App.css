@@ -1,5 +1,6 @@
 /* CSS Variables for the color palette */
 :root {
+    /* Light mode (default) */
     --primary-blue: #5680e9;
     --light-blue: #84ceeb;
     --vibrant-blue: #5ab9ea;
@@ -11,37 +12,17 @@
     --text-gray: #666666;
 }
 
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    display: block;
-    min-width: initial;
-    min-height: initial;
-    place-items: initial;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-/* Hide scrollbar for webkit browsers */
-::-webkit-scrollbar {
-    display: none;
-}
-
-body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Roboto", sans-serif;
-    line-height: 1.6;
-    color: var(--dark-gray);
-    background-color: var(--white);
+/* Dark mode */
+[data-theme="dark"] {
+    --primary-blue: #7a9eff;
+    --light-blue: #a8d8ff;
+    --vibrant-blue: #6dd5ed;
+    --light-lavender: #2a2d3e;
+    --purple: #b794f4;
+    --white: #1a1b26;
+    --light-gray: #2d3748;
+    --dark-gray: #e8eaf6;
+    --text-gray: #a0aec0;
 }
 
 .App {
