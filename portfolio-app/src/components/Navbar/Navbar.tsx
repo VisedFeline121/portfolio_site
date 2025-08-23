@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+
+            // Make navbar transparent only at the very top (scroll position = 0)
+            setIsScrolled(scrollPosition > 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -15,7 +29,11 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="navbar">
+        <nav
+            className={`navbar ${
+                isScrolled ? "navbar-scrolled" : "navbar-transparent"
+            }`}
+        >
             <div className="navbar-container">
                 <div className="navbar-brand">
                     <span className="navbar-name">Or Prager</span>
