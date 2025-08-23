@@ -1,76 +1,20 @@
 import React from "react";
+import { projects } from "../data/projects";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    technologies: string[];
-    githubUrl: string;
-    liveUrl?: string;
-    image?: string;
-}
+import { Container } from "./layout/Container";
 
 const Projects: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
-    
-    const projects: Project[] = [
-        {
-            id: 1,
-            title: "E-Commerce Platform",
-            description:
-                "A full-stack e-commerce application built with React, Node.js, and PostgreSQL. Features include user authentication, product management, shopping cart, and payment integration.",
-            technologies: [
-                "React",
-                "TypeScript",
-                "Node.js",
-                "Express",
-                "PostgreSQL",
-                "Stripe",
-            ],
-            githubUrl: "https://github.com/yourusername/ecommerce-platform",
-            liveUrl: "https://ecommerce-demo.com",
-        },
-        {
-            id: 2,
-            title: "Task Management App",
-            description:
-                "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-            technologies: [
-                "React",
-                "TypeScript",
-                "Python",
-                "FastAPI",
-                "WebSocket",
-                "Redis",
-            ],
-            githubUrl: "https://github.com/yourusername/task-manager",
-            liveUrl: "https://task-manager-demo.com",
-        },
-        {
-            id: 3,
-            title: "Weather Dashboard",
-            description:
-                "A weather application that displays current weather and forecasts using external APIs. Features include location-based weather, 7-day forecast, and weather alerts.",
-            technologies: [
-                "React",
-                "TypeScript",
-                "OpenWeather API",
-                "Chart.js",
-                "CSS Grid",
-            ],
-            githubUrl: "https://github.com/yourusername/weather-dashboard",
-            liveUrl: "https://weather-dashboard-demo.com",
-        },
-    ];
 
     return (
-        <section 
+        <section
             ref={elementRef}
-            id="projects" 
-            className={`projects-section ${isVisible ? "section-visible" : "section-hidden"}`}
+            id="projects"
+            className={`projects-section ${
+                isVisible ? "section-visible" : "section-hidden"
+            }`}
         >
-            <div className="container">
+            <Container>
                 <h2 className="section-title">My Projects</h2>
                 <div className="projects-grid">
                     {projects.map((project) => (
@@ -113,7 +57,7 @@ const Projects: React.FC = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

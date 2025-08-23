@@ -1,16 +1,21 @@
 import React from "react";
+import { contactInfo } from "../data/contact";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Container } from "./layout/Container";
+import { Button } from "./ui/Button";
 
 const Contact: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
-    
+
     return (
-        <section 
+        <section
             ref={elementRef}
-            id="contact" 
-            className={`contact-section ${isVisible ? "section-visible" : "section-hidden"}`}
+            id="contact"
+            className={`contact-section ${
+                isVisible ? "section-visible" : "section-hidden"
+            }`}
         >
-            <div className="container">
+            <Container>
                 <h2 className="section-title">Contact Me</h2>
                 <div className="contact-content">
                     <div className="contact-info">
@@ -26,21 +31,21 @@ const Contact: React.FC = () => {
                             <div className="contact-item">
                                 <span className="contact-label">Email:</span>
                                 <a
-                                    href="mailto:your.email@example.com"
+                                    href={`mailto:${contactInfo.email}`}
                                     className="contact-link"
                                 >
-                                    your.email@example.com
+                                    {contactInfo.email}
                                 </a>
                             </div>
                             <div className="contact-item">
                                 <span className="contact-label">Location:</span>
-                                <span>Your City, Country</span>
+                                <span>{contactInfo.location}</span>
                             </div>
                         </div>
 
                         <div className="social-links">
                             <a
-                                href="https://github.com/yourusername"
+                                href={contactInfo.socialLinks.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-link"
@@ -48,21 +53,23 @@ const Contact: React.FC = () => {
                                 GitHub
                             </a>
                             <a
-                                href="https://linkedin.com/in/yourusername"
+                                href={contactInfo.socialLinks.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-link"
                             >
                                 LinkedIn
                             </a>
-                            <a
-                                href="https://twitter.com/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-link"
-                            >
-                                Twitter
-                            </a>
+                            {contactInfo.socialLinks.twitter && (
+                                <a
+                                    href={contactInfo.socialLinks.twitter}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social-link"
+                                >
+                                    Twitter
+                                </a>
+                            )}
                         </div>
                     </div>
 
@@ -109,13 +116,13 @@ const Contact: React.FC = () => {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-primary">
+                            <Button type="submit" className="btn-primary">
                                 Send Message
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

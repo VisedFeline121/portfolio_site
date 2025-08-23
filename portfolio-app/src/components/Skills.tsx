@@ -1,30 +1,20 @@
 import React from "react";
+import { skills } from "../data/skills";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Container } from "./layout/Container";
 
 const Skills: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
-    
-    const skills = {
-        frontend: [
-            "React",
-            "TypeScript",
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "Next.js",
-        ],
-        backend: ["Python", "Node.js", "Express", "FastAPI", "Django"],
-        database: ["PostgreSQL", "MongoDB", "SQLite", "Redis"],
-        tools: ["Git", "Docker", "AWS", "Vercel", "Netlify", "VS Code"],
-    };
 
     return (
-        <section 
+        <section
             ref={elementRef}
-            id="skills" 
-            className={`skills-section ${isVisible ? "section-visible" : "section-hidden"}`}
+            id="skills"
+            className={`skills-section ${
+                isVisible ? "section-visible" : "section-hidden"
+            }`}
         >
-            <div className="container">
+            <Container>
                 <h2 className="section-title">My Skills</h2>
                 <div className="skills-content">
                     <div className="skills-category">
@@ -71,7 +61,7 @@ const Skills: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

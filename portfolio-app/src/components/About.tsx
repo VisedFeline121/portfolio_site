@@ -1,5 +1,6 @@
 import React from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Container } from "./layout/Container";
 
 const About: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
@@ -12,7 +13,7 @@ const About: React.FC = () => {
                 isVisible ? "section-visible" : "section-hidden"
             }`}
         >
-            <div className="container">
+            <Container>
                 <h2 className="section-title">About Me</h2>
                 <div className="about-content">
                     <div className="about-text">
@@ -35,7 +36,7 @@ const About: React.FC = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

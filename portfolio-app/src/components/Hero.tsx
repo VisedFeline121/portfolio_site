@@ -1,6 +1,10 @@
 import React from "react";
+import { SECTIONS } from "../constants";
+import { useScrollToSection } from "../hooks/useScrollToSection";
 
 const Hero: React.FC = () => {
+    const { scrollToSection } = useScrollToSection();
+
     return (
         <section id="hero" className="hero-section">
             <div className="hero-content">
@@ -14,12 +18,7 @@ const Hero: React.FC = () => {
                 <div className="hero-buttons">
                     <button
                         className="btn btn-primary"
-                        onClick={() => {
-                            const element = document.getElementById("contact");
-                            if (element) {
-                                element.scrollIntoView({ behavior: "smooth" });
-                            }
-                        }}
+                        onClick={() => scrollToSection(SECTIONS.CONTACT)}
                     >
                         Contact Me
                     </button>
