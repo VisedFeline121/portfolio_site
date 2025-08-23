@@ -27,6 +27,13 @@ body {
     min-width: initial;
     min-height: initial;
     place-items: initial;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -39,7 +46,7 @@ body {
 
 .App {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .container {
@@ -158,6 +165,12 @@ section {
     background-color: var(--white);
     color: var(--primary-blue);
     transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
 }
 
 /* About Section */
@@ -463,6 +476,19 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--vibrant-blue);
+}
+
+/* Section Animations */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
 }
 
 /* Animations */

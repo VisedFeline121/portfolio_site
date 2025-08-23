@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 interface Experience {
     id: number;
@@ -17,6 +18,8 @@ interface Education {
 }
 
 const CV: React.FC = () => {
+    const { isVisible, elementRef } = useIntersectionObserver();
+    
     const experiences: Experience[] = [
         {
             id: 1,
@@ -56,7 +59,11 @@ const CV: React.FC = () => {
     ];
 
     return (
-        <section id="cv" className="cv-section">
+        <section 
+            ref={elementRef}
+            id="cv" 
+            className={`cv-section ${isVisible ? "section-visible" : "section-hidden"}`}
+        >
             <div className="container">
                 <h2 className="section-title">Experience & Education</h2>
 

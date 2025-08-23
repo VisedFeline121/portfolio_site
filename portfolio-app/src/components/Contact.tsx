@@ -1,8 +1,15 @@
 import React from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Contact: React.FC = () => {
+    const { isVisible, elementRef } = useIntersectionObserver();
+    
     return (
-        <section id="contact" className="contact-section">
+        <section 
+            ref={elementRef}
+            id="contact" 
+            className={`contact-section ${isVisible ? "section-visible" : "section-hidden"}`}
+        >
             <div className="container">
                 <h2 className="section-title">Contact Me</h2>
                 <div className="contact-content">

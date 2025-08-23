@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 interface Project {
     id: number;
@@ -11,6 +12,8 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
+    const { isVisible, elementRef } = useIntersectionObserver();
+    
     const projects: Project[] = [
         {
             id: 1,
@@ -62,7 +65,11 @@ const Projects: React.FC = () => {
     ];
 
     return (
-        <section id="projects" className="projects-section">
+        <section 
+            ref={elementRef}
+            id="projects" 
+            className={`projects-section ${isVisible ? "section-visible" : "section-hidden"}`}
+        >
             <div className="container">
                 <h2 className="section-title">My Projects</h2>
                 <div className="projects-grid">

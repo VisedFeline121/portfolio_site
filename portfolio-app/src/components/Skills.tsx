@@ -1,6 +1,9 @@
 import React from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Skills: React.FC = () => {
+    const { isVisible, elementRef } = useIntersectionObserver();
+    
     const skills = {
         frontend: [
             "React",
@@ -16,7 +19,11 @@ const Skills: React.FC = () => {
     };
 
     return (
-        <section id="skills" className="skills-section">
+        <section 
+            ref={elementRef}
+            id="skills" 
+            className={`skills-section ${isVisible ? "section-visible" : "section-hidden"}`}
+        >
             <div className="container">
                 <h2 className="section-title">My Skills</h2>
                 <div className="skills-content">
