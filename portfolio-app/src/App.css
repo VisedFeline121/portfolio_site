@@ -75,6 +75,7 @@ section {
     color: var(--white);
     text-align: center;
     width: 100%;
+    padding-top: 80px;
 }
 
 .hero-content {
