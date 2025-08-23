@@ -9,9 +9,14 @@ export const useIntersectionObserver = (threshold: number = 0.1) => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
+                    // Unobserve after animation triggers to save resources
+                    observer.unobserve(entry.target);
                 }
             },
-            { threshold }
+            {
+                threshold,
+                rootMargin: "50px", // Start animation slightly before element enters viewport
+            }
         );
 
         if (elementRef.current) {

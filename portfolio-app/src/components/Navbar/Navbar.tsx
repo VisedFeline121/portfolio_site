@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { DEFAULT_THEME, SECTIONS, THEME_STORAGE_KEY } from "../../constants";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -12,25 +13,32 @@ const Navbar: React.FC = () => {
             "data-theme",
             newTheme ? "dark" : "light"
         );
-        localStorage.setItem("theme", newTheme ? "dark" : "light");
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme ? "dark" : "light");
     };
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem("theme") || "light";
+        const savedTheme =
+            localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME;
         const prefersDark = savedTheme === "dark";
         setIsDarkMode(prefersDark);
         document.documentElement.setAttribute("data-theme", savedTheme);
     }, []);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
+        let ticking = false;
 
-            // Make navbar transparent only at the very top (scroll position = 0)
-            setIsScrolled(scrollPosition > 0);
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollPosition = window.scrollY;
+                    setIsScrolled(scrollPosition > 0);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -61,28 +69,28 @@ const Navbar: React.FC = () => {
                     <div className="navbar-links">
                         <button
                             className="nav-link"
-                            onClick={() => scrollToSection("hero")}
+                            onClick={() => scrollToSection(SECTIONS.HERO)}
                         >
                             <span className="nav-icon">🏠</span>
                             Home
                         </button>
                         <button
                             className="nav-link"
-                            onClick={() => scrollToSection("about")}
+                            onClick={() => scrollToSection(SECTIONS.ABOUT)}
                         >
                             <span className="nav-icon">👤</span>
                             About Me
                         </button>
                         <button
                             className="nav-link"
-                            onClick={() => scrollToSection("projects")}
+                            onClick={() => scrollToSection(SECTIONS.PROJECTS)}
                         >
                             <span className="nav-icon">&lt;/&gt;</span>
                             Projects
                         </button>
                         <button
                             className="nav-link"
-                            onClick={() => scrollToSection("contact")}
+                            onClick={() => scrollToSection(SECTIONS.CONTACT)}
                         >
                             <span className="nav-icon">✉️</span>
                             Contact
