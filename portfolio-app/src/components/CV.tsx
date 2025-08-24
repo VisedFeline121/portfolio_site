@@ -2,7 +2,7 @@ import React from "react";
 import { education, experiences } from "../data/experience";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { Container } from "./layout/Container";
-import { Button } from "./ui/Button";
+import { CVButton } from "./ui/CVButton";
 
 const CV: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
@@ -73,7 +73,7 @@ const CV: React.FC = () => {
                 </div>
 
                 <div className="cv-download">
-                    <Button className="btn-primary">Download Full CV</Button>
+                    <CVButton />
                 </div>
             </Container>
         </section>

@@ -109,6 +109,34 @@
     box-shadow: 0 4px 15px rgba(90, 185, 234, 0.4);
 }
 
+/* CV Button - Flexible sizing for different contexts */
+.cv-button {
+    background: linear-gradient(
+        135deg,
+        var(--vibrant-blue) 0%,
+        var(--purple) 100%
+    );
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cv-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(90, 185, 234, 0.4);
+    color: var(--white);
+    text-decoration: none;
+}
+
 .cv-icon {
     font-size: 1.1rem;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { SECTIONS } from "../constants";
 import { useScrollToSection } from "../hooks/useScrollToSection";
+import { CVButton } from "./ui/CVButton";
 
 const Hero: React.FC = () => {
     const { scrollToSection } = useScrollToSection();
@@ -52,6 +53,10 @@ const Hero: React.FC = () => {
                         </svg>
                         GitHub
                     </a>
+                </div>
+
+                <div className="hero-cv-download">
+                    <CVButton />
                 </div>
             </div>
         </section>

@@ -102,6 +102,12 @@ section {
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 
+.hero-cv-download {
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
 /* Button styles */
 .btn {
     padding: 12px 30px;

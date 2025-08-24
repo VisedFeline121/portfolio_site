@@ -4,6 +4,7 @@ import { useScrollPosition } from "../../hooks/useScrollPosition";
 import { useScrollToSection } from "../../hooks/useScrollToSection";
 import { useTheme } from "../../hooks/useTheme";
 import { Button } from "../ui/Button";
+import { CVButton } from "../ui/CVButton";
 import { NavLink } from "../ui/NavLink";
 import "./Navbar.css";
 
@@ -59,10 +60,7 @@ const Navbar: React.FC = () => {
                         />
                     </div>
 
-                    <Button className="cv-download-btn" onClick={downloadCV}>
-                        <span className="cv-icon">⬇️</span>
-                        View my CV
-                    </Button>
+                    <CVButton />
                     <Button className="theme-toggle" onClick={toggleTheme}>
                         {isDarkMode ? "☀️" : "🌙"}
                     </Button>
