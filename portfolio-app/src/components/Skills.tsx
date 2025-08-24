@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { skills } from "../data/skills";
+import { skillIcons, skills, tabLabels } from "../data/skills";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { Container } from "./layout/Container";
 
@@ -20,48 +20,6 @@ const Skills: React.FC = () => {
             newExpanded.add(skillName);
         }
         setExpandedSkills(newExpanded);
-    };
-
-    const tabLabels = {
-        frontend: "Frontend",
-        backend: "Backend",
-        database: "Database",
-        tools: "Tools & Platforms",
-    };
-
-    const getSkillIcon = (skillName: string) => {
-        const iconMap: { [key: string]: string } = {
-            // Frontend
-            React: "⚛️",
-            TypeScript: "📘",
-            JavaScript: "🟨",
-            HTML: "🌐",
-            CSS: "🎨",
-            "Next.js": "⚡",
-
-            // Backend
-            Python: "🐍",
-            "Node.js": "🟢",
-            Express: "🚂",
-            FastAPI: "⚡",
-            Django: "🎯",
-
-            // Database
-            PostgreSQL: "🐘",
-            MongoDB: "🍃",
-            SQLite: "💾",
-            Redis: "🔴",
-
-            // Tools
-            Git: "📝",
-            Docker: "🐳",
-            AWS: "☁️",
-            Vercel: "▲",
-            Netlify: "🚀",
-            "VS Code": "💻",
-        };
-
-        return iconMap[skillName] || "⚙️";
     };
 
     return (
@@ -111,7 +69,7 @@ const Skills: React.FC = () => {
                                     >
                                         <div className="skill-info">
                                             <span className="skill-icon">
-                                                {getSkillIcon(skill.name)}
+                                                {skillIcons[skill.name] || "⚙️"}
                                             </span>
                                             <span className="skill-name">
                                                 {skill.name}

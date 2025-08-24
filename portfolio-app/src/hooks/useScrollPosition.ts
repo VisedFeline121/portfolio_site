@@ -4,6 +4,18 @@ export const useScrollPosition = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        // Check initial scroll position immediately
+        const checkScrollPosition = () => {
+            const scrollPosition = window.scrollY;
+            setIsScrolled(scrollPosition > 0);
+        };
+
+        // Check immediately
+        checkScrollPosition();
+
+        // Also check after a small delay to handle any layout shifts
+        const timeoutId = setTimeout(checkScrollPosition, 100);
+
         let ticking = false;
 
         const handleScroll = () => {
@@ -18,7 +30,11 @@ export const useScrollPosition = () => {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            clearTimeout(timeoutId);
+        };
     }, []);
 
     return { isScrolled };

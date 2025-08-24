@@ -12,6 +12,9 @@ const Navbar: React.FC = () => {
     const { isScrolled } = useScrollPosition();
     const { scrollToSection } = useScrollToSection();
 
+    // Debug: Log scroll state
+    console.log("Navbar isScrolled:", isScrolled, "ScrollY:", window.scrollY);
+
     const downloadCV = () => {
         // TODO: Add actual CV download functionality
         console.log("Downloading CV...");
