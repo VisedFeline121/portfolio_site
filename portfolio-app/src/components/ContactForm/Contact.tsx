@@ -1,11 +1,45 @@
-import React from "react";
-import { contactInfo } from "../data/contact";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { Container } from "./layout/Container";
-import { Button } from "./ui/Button";
+// TODO: Integrate with Web3Form when theyre back online
+
+import React, { useRef, useState } from "react";
+import { contactInfo } from "../../data/contact";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { Container } from "../layout/Container";
+import { Button } from "../ui/Button";
 
 const Contact: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
+
+    // Form state management
+    const [formResult, setFormResult] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleFormSubmit = async (
+        event: React.FormEvent<HTMLFormElement>
+    ) => {
+        event.preventDefault();
+        setIsSubmitting(true);
+        setFormResult("Sending....");
+        const formData = new FormData(event.target as HTMLFormElement);
+
+        formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY || "");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setFormResult("Form Submitted Successfully");
+            formRef.current?.reset();
+        } else {
+            console.log("Error", data);
+            setFormResult(data.message);
+        }
+        setIsSubmitting(false);
+    };
 
     return (
         <section
@@ -18,6 +52,7 @@ const Contact: React.FC = () => {
             <Container>
                 <h2 className="section-title">Contact Me</h2>
                 <div className="contact-content">
+                    {/* Contact Information */}
                     <div className="contact-info">
                         <h3>Get In Touch</h3>
                         <p>
@@ -73,9 +108,19 @@ const Contact: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Contact Form */}
                     <div className="contact-form">
                         <h3>Send a Message</h3>
-                        <form className="form">
+                        <form
+                            className="form"
+                            onSubmit={handleFormSubmit}
+                            ref={formRef}
+                        >
+                            <input
+                                type="hidden"
+                                name="access_key"
+                                value={import.meta.env.VITE_WEB3FORMS_KEY || ""}
+                            />
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input
@@ -116,9 +161,24 @@ const Contact: React.FC = () => {
                                 ></textarea>
                             </div>
 
-                            <Button type="submit" className="btn-primary">
-                                Send Message
+                            <Button
+                                type="submit"
+                                className="btn-primary"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? "Sending..." : "Send Message"}
                             </Button>
+                            {formResult && (
+                                <div
+                                    className={`form-result ${
+                                        formResult.includes("Success")
+                                            ? "success"
+                                            : "error"
+                                    }`}
+                                >
+                                    {formResult}
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

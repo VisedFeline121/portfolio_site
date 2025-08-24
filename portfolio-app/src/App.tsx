@@ -1,7 +1,7 @@
 import "./App.css";
 import About from "./components/About";
 import CV from "./components/CV";
-import Contact from "./components/Contact";
+import Contact from "./components/ContactForm/Contact";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar/Navbar";
