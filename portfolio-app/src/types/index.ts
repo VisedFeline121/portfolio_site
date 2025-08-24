@@ -22,16 +22,21 @@ export interface Project {
 }
 
 // Skills types
+export interface Skill {
+    name: string;
+    description: string;
+}
+
 export interface SkillCategory {
     name: string;
-    skills: string[];
+    skills: Skill[];
 }
 
 export interface SkillsData {
-    frontend: string[];
-    backend: string[];
-    database: string[];
-    tools: string[];
+    frontend: Skill[];
+    backend: Skill[];
+    database: Skill[];
+    tools: Skill[];
 }
 
 // Experience types
