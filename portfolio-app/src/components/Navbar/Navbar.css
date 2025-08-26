@@ -24,10 +24,11 @@
 
 .navbar-container {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 40px;
 }
 
 .navbar-brand {
@@ -36,7 +37,9 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
-    margin-left: 10rem;
+    margin-left: 2rem;
+    /* Make it responsive */
+    flex-shrink: 0;
 }
 
 .navbar-name {
@@ -51,14 +54,19 @@
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-left: auto;
+    /* Ensure it doesn't overflow */
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .navbar-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
+    /* Make it responsive */
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -157,4 +165,59 @@
 .theme-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+    .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    .navbar-links {
+        gap: 0.5rem;
+    }
+
+    .navbar-right {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-container {
+        padding: 0 10px;
+    }
+
+    .navbar-brand {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .cv-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 0.5rem;
+    }
+
+    .cv-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
 }
