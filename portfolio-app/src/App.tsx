@@ -1,14 +1,22 @@
 import "./App.css";
-import About from "./components/About";
-import CV from "./components/CV";
-import Contact from "./components/ContactForm/Contact";
-import { ErrorBoundary } from "./components/ErrorBoundary";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import { ErrorBoundary } from "./components/error/ErrorBoundary";
+import NotFound from "./components/error/NotFound";
+import Navbar from "./components/navigation/Navbar";
+import About from "./components/sections/About/About";
+import CV from "./components/sections/CV/CV";
+import Contact from "./components/sections/Contact/Contact";
+import Hero from "./components/sections/Hero/Hero";
+import Projects from "./components/sections/Projects/Projects";
+import Skills from "./components/sections/Skills/Skills";
+import { useRouteValidation } from "./hooks/useRouteValidation";
 
 function App() {
+    const { show404 } = useRouteValidation();
+
+    if (show404) {
+        return <NotFound />;
+    }
+
     return (
         <ErrorBoundary>
             <div className="App">

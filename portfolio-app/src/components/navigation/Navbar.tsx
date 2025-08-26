@@ -16,11 +16,6 @@ const Navbar: React.FC = () => {
     // Debug: Log scroll state
     console.log("Navbar isScrolled:", isScrolled, "ScrollY:", window.scrollY);
 
-    const downloadCV = () => {
-        // TODO: Add actual CV download functionality
-        console.log("Downloading CV...");
-    };
-
     return (
         <nav
             className={`navbar ${

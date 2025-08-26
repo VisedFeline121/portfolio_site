@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { skillIcons, skills, tabLabels } from "../data/skills";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { Container } from "./layout/Container";
+import { skillIcons, skills, tabLabels } from "../../../data/skills";
+import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
+import { Container } from "../../layout/Container";
 
 type SkillCategory = "frontend" | "backend" | "database" | "tools";
 

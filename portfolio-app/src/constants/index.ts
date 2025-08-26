@@ -20,6 +20,18 @@ export const SECTIONS = {
     CONTACT: "contact",
 } as const;
 
+// Route validation constants
+export const VALID_PATHS = ["/", "/index.html", ""] as const;
+export const VALID_HASHES = [
+    "#hero",
+    "#about",
+    "#skills",
+    "#projects",
+    "#cv",
+    "#contact",
+    "",
+] as const;
+
 // Social links
 export const SOCIAL_LINKS = {
     LINKEDIN: "https://www.linkedin.com/in/or-prager-75429b22b/",

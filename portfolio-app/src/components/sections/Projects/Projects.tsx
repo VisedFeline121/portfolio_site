@@ -1,7 +1,7 @@
 import React from "react";
-import { projects } from "../data/projects";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { Container } from "./layout/Container";
+import { projects } from "../../../data/projects";
+import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
+import { Container } from "../../layout/Container";
 
 const Projects: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();

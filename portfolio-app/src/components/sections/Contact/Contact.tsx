@@ -1,10 +1,10 @@
 // TODO: Integrate with Web3Form when theyre back online
 
 import React, { useRef, useState } from "react";
-import { contactInfo } from "../../data/contact";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
-import { Container } from "../layout/Container";
-import { Button } from "../ui/Button";
+import { contactInfo } from "../../../data/contact";
+import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
+import { Container } from "../../layout/Container";
+import { Button } from "../../ui/Button";
 
 const Contact: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
