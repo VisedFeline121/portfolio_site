@@ -8,9 +8,71 @@
     margin: 0 auto;
 }
 
-.about-text p {
+.timeline {
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: var(--primary-blue);
+    top: 30px;
+    bottom: 90px;
+    left: 29px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    padding-left: 100px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-point {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.timeline-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.timeline-content h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.timeline-content p {
+    margin: 0;
     font-size: 1.1rem;
-    margin-bottom: 20px;
     line-height: 1.8;
     color: var(--text-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .text-block-1,
+    .text-block-2,
+    .text-block-3,
+    .text-block-4 {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
