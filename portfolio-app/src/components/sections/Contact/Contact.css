@@ -51,6 +51,7 @@
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 
 .contact-label {
@@ -60,14 +61,78 @@
     min-width: 80px;
 }
 
-.contact-link {
-    color: var(--vibrant-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Email Container Styles */
+.email-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
 }
 
-.contact-link:hover {
+.email-link {
+    background: none;
+    border: none;
+    color: var(--vibrant-blue);
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    position: relative;
+}
+
+.email-link:hover {
     color: var(--primary-blue);
+    background-color: var(--light-lavender);
+}
+
+.email-link.copied {
+    color: var(--primary-blue);
+    background-color: var(--light-lavender);
+}
+
+.email-link::before {
+    content: var(--tooltip-text, "Click to copy");
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    display: none;
+}
+
+.email-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+.email-send-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.email-icon {
+    width: 16px;
+    height: 16px;
 }
 
 .social-links {
@@ -124,5 +189,18 @@
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-label {
+        margin-bottom: 8px;
+    }
+
+    .email-container {
+        width: 100%;
     }
 }

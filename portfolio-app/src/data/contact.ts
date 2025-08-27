@@ -1,11 +1,10 @@
 import type { ContactInfo } from "../types";
 
 export const contactInfo: ContactInfo = {
-    email: "your.email@example.com",
+    email: "or.prager.dev@gmail.com",
     location: "Your City, Country",
     socialLinks: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        twitter: "https://twitter.com/yourusername",
+        github: "https://github.com/VisedFeline121",
+        linkedin: "https://www.linkedin.com/in/or-prager-75429b22b/",
     },
 };
