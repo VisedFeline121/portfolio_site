@@ -15,7 +15,9 @@ const About: React.FC = () => {
             }`}
         >
             <Container>
-                <h2 className="section-title">About Me</h2>
+                <h2 className="section-title">
+                    About <span className="gradient-word">Me</span>
+                </h2>
                 <div className="about-content">
                     <div className="about-text">
                         <p>

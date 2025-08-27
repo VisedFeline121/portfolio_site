@@ -49,6 +49,28 @@ section {
     color: var(--primary-blue);
 }
 
+.section-title .gradient-word {
+    background: linear-gradient(
+        90deg,
+        var(--vibrant-blue) 0%,
+        var(--purple) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+/* Gradient for hero title and navbar */
+.hero-title .gradient-word,
+.navbar-name .gradient-word {
+    background: linear-gradient(90deg, #00ffff 0%, #87ceeb 50%, #9370db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
 /* Button styles */
 .btn {
     padding: 12px 30px;

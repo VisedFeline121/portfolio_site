@@ -61,7 +61,9 @@ const Contact: React.FC = () => {
             }`}
         >
             <Container>
-                <h2 className="section-title">Contact Me</h2>
+                <h2 className="section-title">
+                    Contact <span className="gradient-word">Me</span>
+                </h2>
                 <div className="contact-content">
                     {/* Contact Information */}
                     <div className="contact-info">

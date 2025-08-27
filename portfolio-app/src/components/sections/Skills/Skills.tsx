@@ -32,7 +32,9 @@ const Skills: React.FC = () => {
             }`}
         >
             <Container>
-                <h2 className="section-title">My Skills</h2>
+                <h2 className="section-title">
+                    My <span className="gradient-word">Skills</span>
+                </h2>
 
                 <div className="skills-content">
                     {/* Tab Navigation */}

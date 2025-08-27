@@ -17,7 +17,10 @@ const CV: React.FC = () => {
             }`}
         >
             <Container>
-                <h2 className="section-title">Experience & Education</h2>
+                <h2 className="section-title">
+                    Experience &{" "}
+                    <span className="gradient-word">Education</span>
+                </h2>
 
                 <div className="cv-content">
                     <div className="experience-section">

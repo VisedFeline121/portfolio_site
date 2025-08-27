@@ -24,7 +24,9 @@ const Navbar: React.FC = () => {
         >
             <div className="navbar-container">
                 <div className="navbar-brand">
-                    <span className="navbar-name">Or Prager</span>
+                    <span className="navbar-name">
+                        Or <span className="gradient-word">Prager</span>
+                    </span>
                 </div>
 
                 <div className="navbar-right">

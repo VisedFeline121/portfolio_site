@@ -10,7 +10,9 @@ const Hero: React.FC = () => {
     return (
         <section id="hero" className="hero-section">
             <div className="hero-content">
-                <h1 className="hero-title">Or Prager</h1>
+                <h1 className="hero-title">
+                    Or <span className="gradient-word">Prager</span>
+                </h1>
                 <h2 className="hero-subtitle">Full Stack Developer</h2>
                 <p className="hero-description">
                     Experienced developer passionate about building scalable web

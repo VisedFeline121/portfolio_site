@@ -17,7 +17,9 @@ const Projects: React.FC = () => {
             }`}
         >
             <Container>
-                <h2 className="section-title">My Projects</h2>
+                <h2 className="section-title">
+                    My <span className="gradient-word">Projects</span>
+                </h2>
                 <div className="projects-grid">
                     {projects.map((project) => (
                         <div key={project.id} className="project-card">
