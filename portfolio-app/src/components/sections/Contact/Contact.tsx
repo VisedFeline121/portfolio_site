@@ -5,6 +5,7 @@ import { contactInfo } from "../../../data/contact";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
 import { Button } from "../../ui/Button";
+import "./Contact.css";
 
 const Contact: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();

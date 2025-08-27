@@ -1,0 +1,87 @@
+/* CV Section */
+.cv-section {
+    background-color: var(--white);
+}
+
+.cv-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.experience-section h3,
+.education-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--vibrant-blue);
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--light-lavender);
+}
+
+.experience-header,
+.education-header {
+    margin-bottom: 15px;
+}
+
+.experience-title,
+.education-degree {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.experience-company,
+.education-institution {
+    font-weight: 500;
+    color: var(--text-gray);
+    margin-right: 15px;
+}
+
+.experience-period,
+.education-period {
+    color: var(--vibrant-blue);
+    font-weight: 500;
+}
+
+.experience-description {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-description li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-gray);
+}
+
+.experience-description li::before {
+    content: "•";
+    color: var(--vibrant-blue);
+    position: absolute;
+    left: 0;
+}
+
+.education-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.cv-download {
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cv-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

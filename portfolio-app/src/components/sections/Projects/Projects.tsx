@@ -3,6 +3,7 @@ import { projects } from "../../../data/projects";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
 import TechTag from "../../ui/TechTag";
+import "./Projects.css";
 
 const Projects: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();
@@ -29,10 +30,12 @@ const Projects: React.FC = () => {
                                 </p>
                                 <div className="project-technologies">
                                     {project.technologies.map((tech) => (
-                                        <TechTag 
-                                            key={tech} 
-                                            name={tech} 
-                                            projectUsage={project.technologyUsage[tech]}
+                                        <TechTag
+                                            key={tech}
+                                            name={tech}
+                                            projectUsage={
+                                                project.technologyUsage[tech]
+                                            }
                                         />
                                     ))}
                                 </div>

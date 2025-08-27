@@ -3,6 +3,7 @@ import { education, experiences } from "../../../data/experience";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
 import { CVButton } from "../../ui/CVButton";
+import "./CV.css";
 
 const CV: React.FC = () => {
     const { isVisible, elementRef } = useIntersectionObserver();

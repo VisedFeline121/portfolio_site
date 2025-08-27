@@ -2,6 +2,7 @@ import React from "react";
 import { SECTIONS } from "../../../constants";
 import { useScrollToSection } from "../../../hooks/useScrollToSection";
 import { CVButton } from "../../ui/CVButton";
+import "./Hero.css";
 
 const Hero: React.FC = () => {
     const { scrollToSection } = useScrollToSection();
