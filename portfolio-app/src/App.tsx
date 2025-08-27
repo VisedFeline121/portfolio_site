@@ -1,6 +1,7 @@
 import "./App.css";
 import { ErrorBoundary } from "./components/error/ErrorBoundary";
 import NotFound from "./components/error/NotFound";
+import Footer from "./components/layout/Footer";
 import Navbar from "./components/navigation/Navbar";
 import About from "./components/sections/About/About";
 import CV from "./components/sections/CV/CV";
@@ -27,6 +28,7 @@ function App() {
                 <Projects />
                 <CV />
                 <Contact />
+                <Footer />
             </div>
         </ErrorBoundary>
     );

@@ -10,12 +10,13 @@ const Hero: React.FC = () => {
     return (
         <section id="hero" className="hero-section">
             <div className="hero-content">
-                <h1 className="hero-title">Your Name</h1>
+                <h1 className="hero-title">Or Prager</h1>
                 <h2 className="hero-subtitle">Full Stack Developer</h2>
                 <p className="hero-description">
-                    Passionate about creating innovative web solutions with
-                    modern technologies. Specializing in Python, TypeScript,
-                    React, and Node.js.
+                    Experienced developer passionate about building scalable web
+                    applications and delivering exceptional user experiences.
+                    Specializing in modern technologies with a focus on clean
+                    code and best practices.
                 </p>
                 <div className="hero-buttons">
                     <button

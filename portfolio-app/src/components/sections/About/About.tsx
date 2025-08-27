@@ -19,21 +19,26 @@ const About: React.FC = () => {
                 <div className="about-content">
                     <div className="about-text">
                         <p>
-                            I'm a passionate Full Stack Developer with expertise
-                            in modern web technologies. I love building scalable
-                            applications that solve real-world problems and
-                            provide excellent user experiences.
+                            I'm a dedicated Full Stack Developer with a passion
+                            for creating robust, scalable web applications. My
+                            approach combines technical expertise with a focus
+                            on user experience, ensuring that every project
+                            delivers both functionality and elegance.
                         </p>
                         <p>
-                            With a strong foundation in both frontend and
-                            backend development, I enjoy working across the
-                            entire stack. I'm particularly interested in React,
-                            TypeScript, Python, and Node.js ecosystems.
+                            With experience across the entire development stack,
+                            I specialize in modern technologies including React,
+                            TypeScript, Python, and Node.js. I believe in
+                            writing clean, maintainable code and following
+                            industry best practices to create solutions that
+                            stand the test of time.
                         </p>
                         <p>
-                            When I'm not coding, you can find me exploring new
-                            technologies, contributing to open-source projects,
-                            or sharing knowledge with the developer community.
+                            I'm committed to continuous learning and staying
+                            current with emerging technologies. When I'm not
+                            coding, I contribute to open-source projects and
+                            engage with the developer community to share
+                            knowledge and best practices.
                         </p>
                     </div>
                 </div>
