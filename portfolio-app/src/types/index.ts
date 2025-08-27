@@ -16,9 +16,16 @@ export interface Project {
     title: string;
     description: string;
     technologies: string[];
+    technologyUsage: Record<string, string>;
     githubUrl: string;
     liveUrl?: string;
     image?: string;
+}
+
+// Technology types
+export interface TechInfo {
+    description: string;
+    usage: string;
 }
 
 // Skills types

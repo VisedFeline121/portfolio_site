@@ -1,0 +1,146 @@
+/* Tech Tag Container */
+.tech-tag-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tech Tag Base Styles */
+.tech-tag {
+    background-color: var(--light-lavender);
+    color: var(--dark-gray);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    outline: none;
+}
+
+.tech-tag:hover,
+.tech-tag:focus {
+    background-color: var(--vibrant-blue);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(90, 185, 234, 0.3);
+}
+
+/* Tooltip Styles */
+.tech-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    border: 1px solid var(--light-lavender);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 250px;
+    max-width: 300px;
+    margin-bottom: 8px;
+    animation: tooltipFadeIn 0.2s ease-out;
+}
+
+/* Tooltip Arrow */
+.tech-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--white);
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Tooltip Header */
+.tooltip-header h4 {
+    margin: 0 0 8px 0;
+    color: var(--primary-blue);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Tooltip Content */
+.tooltip-content {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.tooltip-description {
+    margin: 0 0 8px 0;
+    color: var(--text-gray);
+}
+
+.tooltip-usage {
+    margin: 0;
+    color: var(--dark-gray);
+}
+
+.tooltip-usage strong {
+    color: var(--primary-blue);
+}
+
+/* Tooltip Animation */
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tech-tooltip {
+        position: fixed;
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 280px;
+        max-width: 90vw;
+        margin: 0;
+        z-index: 1001;
+    }
+
+    .tech-tooltip::after {
+        display: none;
+    }
+
+    /* Add backdrop for mobile */
+    .tech-tooltip::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .tech-tooltip {
+        animation: none;
+    }
+
+    .tech-tag {
+        transition: none;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.tech-tag:focus-visible {
+    outline: 2px solid var(--vibrant-blue);
+    outline-offset: 2px;
+}
