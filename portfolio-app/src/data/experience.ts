@@ -3,26 +3,15 @@ import type { Education, Experience } from "../types";
 export const experiences: Experience[] = [
     {
         id: 1,
-        title: "Senior Full Stack Developer",
-        company: "Tech Company",
-        period: "2022 - Present",
+        title: "Backend Developer",
+        company: "The Technological Unit of the Intelligence Corps",
+        period: "June 2020 - January 2024",
         description: [
-            "Led development of multiple web applications using React, TypeScript, and Node.js",
-            "Implemented CI/CD pipelines and improved deployment processes",
-            "Mentored junior developers and conducted code reviews",
-            "Collaborated with cross-functional teams to deliver high-quality products",
-        ],
-    },
-    {
-        id: 2,
-        title: "Full Stack Developer",
-        company: "Startup Inc",
-        period: "2020 - 2022",
-        description: [
-            "Built and maintained web applications using Python, Django, and React",
-            "Integrated third-party APIs and payment systems",
-            "Optimized database queries and improved application performance",
-            "Participated in agile development processes and sprint planning",
+            "Worked across multiple teams and system architectures",
+            "Design and development in High-Level domain: Python Services development, Python Micro-Services libraries",
+            "Work with technological and non-technological consumers with diverse requirements",
+            "Work with partner teams and integration between team systems and external systems",
+            "Research and implementation of new technologies",
         ],
     },
 ];
@@ -31,9 +20,9 @@ export const education: Education[] = [
     {
         id: 1,
         degree: "Bachelor of Science in Computer Science",
-        institution: "University Name",
-        period: "2016 - 2020",
+        institution: "Technion - Israel Institute of Technology",
+        period: "May 2024 - Present",
         description:
-            "Graduated with honors. Relevant coursework: Data Structures, Algorithms, Web Development, Database Systems",
+            "Currently pursuing a Computer Science degree at the Technion, focusing on software engineering, algorithms, and modern development practices.",
     },
 ];
