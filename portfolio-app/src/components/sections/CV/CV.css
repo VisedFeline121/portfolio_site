@@ -11,26 +11,30 @@
 }
 
 .experience-section h3,
-.education-section h3 {
+.education-section h3,
+.activities-section h3 {
     font-size: 1.8rem;
     margin-bottom: 30px;
     color: var(--vibrant-blue);
 }
 
 .experience-item,
-.education-item {
+.education-item,
+.activity-item {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid var(--light-lavender);
 }
 
 .experience-header,
-.education-header {
+.education-header,
+.activity-header {
     margin-bottom: 15px;
 }
 
 .experience-title,
-.education-degree {
+.education-degree,
+.activity-title {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--primary-blue);
@@ -38,14 +42,16 @@
 }
 
 .experience-company,
-.education-institution {
+.education-institution,
+.activity-organization {
     font-weight: 500;
     color: var(--text-gray);
     margin-right: 15px;
 }
 
 .experience-period,
-.education-period {
+.education-period,
+.activity-period {
     color: var(--vibrant-blue);
     font-weight: 500;
 }
@@ -69,9 +75,19 @@
     left: 0;
 }
 
-.education-description {
+.education-description,
+.activity-description {
     color: var(--text-gray);
     line-height: 1.6;
+    white-space: pre-line;
+}
+
+.education-description {
+    font-weight: normal;
+}
+
+.education-description strong {
+    font-weight: 600;
 }
 
 .cv-download {

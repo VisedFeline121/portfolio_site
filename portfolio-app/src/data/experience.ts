@@ -1,4 +1,4 @@
-import type { Education, Experience } from "../types";
+import type { Activity, Education, Experience } from "../types";
 
 export const experiences: Experience[] = [
     {
@@ -23,6 +23,26 @@ export const education: Education[] = [
         institution: "Technion - Israel Institute of Technology",
         period: "May 2024 - Present",
         description:
-            "Currently pursuing a Computer Science degree at the Technion, focusing on software engineering, algorithms, and modern development practices.",
+            "Currently pursuing a Computer Science degree at the Technion, focusing on software engineering, algorithms, and modern development practices.\n\nMade the Dean's List in Semester B.\n\n<strong>GPA:</strong> 91",
+    },
+];
+
+export const activities: Activity[] = [
+    {
+        id: 1,
+        title: "Volunteer Math Tutor",
+        organization: "81-on-one Program",
+        period: "2022 - 2023",
+        description:
+            "Tutored high school students in mathematics to prepare them for their Bagrut exams. Demonstrated strong communication skills and ability to explain complex concepts clearly to students.",
+        type: "volunteer",
+    },
+    {
+        id: 2,
+        title: "Marathon Runner",
+        period: "2023",
+        description:
+            "Successfully completed a full marathon, demonstrating discipline, goal-setting, and perseverance in achieving long-term objectives.",
+        type: "achievement",
     },
 ];

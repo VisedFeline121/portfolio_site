@@ -1,5 +1,5 @@
 import React from "react";
-import { education, experiences } from "../../../data/experience";
+import { activities, education, experiences } from "../../../data/experience";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
 import { CVButton } from "../../ui/CVButton";
@@ -66,10 +66,42 @@ const CV: React.FC = () => {
                                         </span>
                                     </div>
                                     {edu.description && (
-                                        <p className="education-description">
-                                            {edu.description}
-                                        </p>
+                                        <p 
+                                            className="education-description"
+                                            dangerouslySetInnerHTML={{ __html: edu.description }}
+                                        />
                                     )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="cv-content">
+                    <div className="activities-section">
+                        <h3>Activities & Achievements</h3>
+                        <div className="activities-list">
+                            {activities.map((activity) => (
+                                <div
+                                    key={activity.id}
+                                    className="activity-item"
+                                >
+                                    <div className="activity-header">
+                                        <h4 className="activity-title">
+                                            {activity.title}
+                                        </h4>
+                                        {activity.organization && (
+                                            <span className="activity-organization">
+                                                {activity.organization}
+                                            </span>
+                                        )}
+                                        <span className="activity-period">
+                                            {activity.period}
+                                        </span>
+                                    </div>
+                                    <p className="activity-description">
+                                        {activity.description}
+                                    </p>
                                 </div>
                             ))}
                         </div>

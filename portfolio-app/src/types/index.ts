@@ -64,6 +64,16 @@ export interface Education {
     description?: string;
 }
 
+// Activity types
+export interface Activity {
+    id: number;
+    title: string;
+    organization?: string;
+    period: string;
+    description: string;
+    type: "volunteer" | "achievement" | "activity";
+}
+
 // Contact types
 export interface ContactInfo {
     email: string;
