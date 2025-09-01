@@ -1,5 +1,3 @@
-// TODO: Integrate with Web3Form when theyre back online
-
 import React, { useRef, useState } from "react";
 import { contactInfo } from "../../../data/contact";
 import { useClipboard } from "../../../hooks/useClipboard";
@@ -33,23 +31,35 @@ const Contact: React.FC = () => {
         setFormResult("Sending....");
         const formData = new FormData(event.target as HTMLFormElement);
 
-        formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY || "");
+        try {
+            const response = await fetch(
+                import.meta.env.VITE_FORMSPREE_URL || "",
+                {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json",
+                    },
+                }
+            );
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData,
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-            setFormResult("Form Submitted Successfully");
-            formRef.current?.reset();
-        } else {
-            console.log("Error", data);
-            setFormResult(data.message);
+            if (response.ok) {
+                setFormResult("Form Submitted Successfully");
+                formRef.current?.reset();
+            } else {
+                console.log("Error", response.status);
+                setFormResult(
+                    "Submission failed. Please try again later or use the email link or email button above."
+                );
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            setFormResult(
+                "An error has occurred. Please try again or use the email link or email button above."
+            );
+        } finally {
+            setIsSubmitting(false);
         }
-        setIsSubmitting(false);
     };
 
     return (
@@ -151,11 +161,6 @@ const Contact: React.FC = () => {
                             onSubmit={handleFormSubmit}
                             ref={formRef}
                         >
-                            <input
-                                type="hidden"
-                                name="access_key"
-                                value={import.meta.env.VITE_WEB3FORMS_KEY || ""}
-                            />
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input

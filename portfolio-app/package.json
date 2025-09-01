@@ -11,6 +11,7 @@
         "info": "echo 'Portfolio Project - React/TypeScript with simple components, data separation, and clean code patterns. See PROJECT_GUIDELINES.md for conventions.'"
     },
     "dependencies": {
+        "@formspree/react": "^3.0.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1"
     },
