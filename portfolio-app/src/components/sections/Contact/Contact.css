@@ -3,72 +3,19 @@
     background-color: var(--light-gray);
 }
 
+/* Contact Content */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
 }
 
+/* Contact Info */
 .contact-info h3,
 .contact-form h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--vibrant-blue);
-}
-
-/* Form Result Messages */
-.form-result {
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 500;
-    text-align: center;
-    animation: slideIn 0.3s ease-out;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-result.success {
-    background-color: #d1f2d1;
-    color: #0f5132;
-    border: 2px solid #badbcc;
-}
-
-.form-result.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
-}
-
-.form-result-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.form-result-icon {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.success-icon {
-    color: #198754;
-}
-
-.error-icon {
-    color: #dc3545;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .contact-info p {
@@ -95,7 +42,7 @@
     min-width: 80px;
 }
 
-/* Email Container Styles */
+/* Email Container */
 .email-container {
     display: flex;
     align-items: center;
@@ -169,6 +116,7 @@
     height: 16px;
 }
 
+/* Social Links */
 .social-links {
     display: flex;
     gap: 20px;
@@ -185,7 +133,7 @@
     color: var(--primary-blue);
 }
 
-/* Form styles */
+/* Contact Form */
 .form {
     display: flex;
     flex-direction: column;
@@ -219,7 +167,7 @@
     border-color: var(--vibrant-blue);
 }
 
-/* Form Modal Overlay */
+/* Form Modal */
 .form-modal-overlay {
     position: absolute;
     top: 0;
@@ -259,7 +207,22 @@
     color: var(--dark-gray);
 }
 
-/* Spinner Animation */
+/* Form Result Icons */
+.form-result-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.success-icon {
+    color: var(--success-green, #198754);
+}
+
+.error-icon {
+    color: var(--error-red, #dc3545);
+}
+
+/* Spinner */
 .spinner {
     width: 40px;
     height: 40px;
@@ -269,6 +232,7 @@
     animation: spin 1s linear infinite;
 }
 
+/* Animations */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
