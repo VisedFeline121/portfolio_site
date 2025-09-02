@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { contactInfo } from "../../../data/contact";
 import { useClipboard } from "../../../hooks/useClipboard";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
@@ -14,6 +14,14 @@ const Contact: React.FC = () => {
     const [formResult, setFormResult] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const formRef = useRef<HTMLFormElement>(null);
+
+    // Auto-hide messages after 5 seconds
+    useEffect(() => {
+        if (formResult) {
+            const timer = setTimeout(() => setFormResult(""), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [formResult]);
 
     const handleEmailClick = () => {
         copyToClipboard(contactInfo.email);
@@ -209,14 +217,32 @@ const Contact: React.FC = () => {
                                 {isSubmitting ? "Sending..." : "Send Message"}
                             </Button>
                             {formResult && (
-                                <div
-                                    className={`form-result ${
-                                        formResult.includes("Success")
-                                            ? "success"
-                                            : "error"
-                                    }`}
-                                >
-                                    {formResult}
+                                <div className="form-modal-overlay">
+                                    <div className="form-modal">
+                                        <div className="form-modal-content">
+                                            {formResult.includes("Sending") ? (
+                                                <>
+                                                    <div className="spinner"></div>
+                                                    <span className="modal-message">
+                                                        {formResult}
+                                                    </span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <svg
+                                                        className="form-result-icon success-icon"
+                                                        viewBox="0 0 24 24"
+                                                        fill="currentColor"
+                                                    >
+                                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                                    </svg>
+                                                    <span className="modal-message">
+                                                        {formResult}
+                                                    </span>
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             )}
                         </form>
