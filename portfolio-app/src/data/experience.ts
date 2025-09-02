@@ -23,7 +23,7 @@ export const education: Education[] = [
         institution: "Technion - Israel Institute of Technology",
         period: "May 2024 - Present",
         description:
-            "Currently pursuing a Computer Science degree at the Technion, focusing on software engineering, algorithms, and modern development practices.\n\nMade the Dean's List in Semester B.\n\n<strong>GPA:</strong> 91",
+            "Currently pursuing a Computer Science degree at the Technion, focusing on software engineering, algorithms, and modern development practices.\n\n<strong>Made the Dean's List in Semesters:</strong> B.\n\n<strong>Currently in Semester:</strong> D.\n\n<strong>GPA:</strong> 91",
     },
 ];
 
@@ -40,9 +40,9 @@ export const activities: Activity[] = [
     {
         id: 2,
         title: "Marathon Runner",
-        period: "2023",
+        period: "2022",
         description:
-            "Successfully completed a full marathon, demonstrating discipline, goal-setting, and perseverance in achieving long-term objectives.",
+            "Successfully completed my first full marathon, demonstrating discipline, goal-setting, and perseverance in achieving long-term objectives.",
         type: "achievement",
     },
 ];
