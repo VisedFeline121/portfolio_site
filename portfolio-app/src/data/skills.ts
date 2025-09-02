@@ -27,11 +27,6 @@ export const skills: SkillsData = {
             description:
                 "Responsive design, CSS Grid, Flexbox, animations, and modern styling techniques.",
         },
-        {
-            name: "Next.js",
-            description:
-                "Full-stack React framework with SSR, SSG, and optimized performance.",
-        },
     ],
     backend: [
         {
@@ -42,12 +37,12 @@ export const skills: SkillsData = {
         {
             name: "Node.js",
             description:
-                "Server-side JavaScript with Express.js and event-driven architecture.",
+                "Server-side JavaScript with event-driven architecture and npm ecosystem.",
         },
         {
-            name: "Express",
+            name: "Django",
             description:
-                "Minimal and flexible Node.js web application framework for APIs.",
+                "Full-featured Python web framework with built-in admin and ORM.",
         },
         {
             name: "FastAPI",
@@ -55,26 +50,26 @@ export const skills: SkillsData = {
                 "Modern Python web framework for building APIs with automatic documentation.",
         },
         {
-            name: "Django",
+            name: "Nginx",
             description:
-                "Full-featured Python web framework with built-in admin and ORM.",
+                "High-performance web server and reverse proxy for production deployments.",
+        },
+        {
+            name: "RabbitMQ",
+            description:
+                "Message broker for asynchronous communication between microservices.",
         },
     ],
     database: [
-        {
-            name: "PostgreSQL",
-            description:
-                "Advanced open-source relational database with ACID compliance.",
-        },
         {
             name: "MongoDB",
             description:
                 "NoSQL document database for flexible data modeling and scalability.",
         },
         {
-            name: "SQLite",
+            name: "MySQL",
             description:
-                "Lightweight, serverless database for embedded applications.",
+                "Relational database management system for structured data storage.",
         },
         {
             name: "Redis",
@@ -94,58 +89,21 @@ export const skills: SkillsData = {
                 "Containerization for consistent development and deployment environments.",
         },
         {
-            name: "AWS",
-            description:
-                "Cloud services including EC2, S3, Lambda, and infrastructure management.",
-        },
-        {
-            name: "Vercel",
-            description:
-                "Deployment platform for frontend applications with serverless functions.",
-        },
-        {
-            name: "Netlify",
-            description:
-                "Static site hosting with CI/CD, forms, and serverless functions.",
-        },
-        {
             name: "VS Code",
             description:
                 "Code editor with extensions, debugging, and integrated development tools.",
         },
+        {
+            name: "Bash",
+            description:
+                "Command-line shell scripting for automation and system administration.",
+        },
+        {
+            name: "PyCharm",
+            description:
+                "Python IDE with advanced debugging, testing, and code analysis tools.",
+        },
     ],
-};
-
-// Skill icon mapping
-export const skillIcons: { [key: string]: string } = {
-    // Frontend
-    React: "⚛️",
-    TypeScript: "📘",
-    JavaScript: "🟨",
-    HTML: "🌐",
-    CSS: "🎨",
-    "Next.js": "⚡",
-
-    // Backend
-    Python: "🐍",
-    "Node.js": "🟢",
-    Express: "🚂",
-    FastAPI: "⚡",
-    Django: "🎯",
-
-    // Database
-    PostgreSQL: "🐘",
-    MongoDB: "🍃",
-    SQLite: "💾",
-    Redis: "🔴",
-
-    // Tools
-    Git: "📝",
-    Docker: "🐳",
-    AWS: "☁️",
-    Vercel: "▲",
-    Netlify: "🚀",
-    "VS Code": "💻",
 };
 
 // Tab labels
@@ -153,5 +111,5 @@ export const tabLabels = {
     frontend: "Frontend",
     backend: "Backend",
     database: "Database",
-    tools: "Tools & Platforms",
+    tools: "Tools & IDEs",
 };

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { skillIcons, skills, tabLabels } from "../../../data/skills";
+import { skills, tabLabels } from "../../../data/skills";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
+import TechIcon from "../../ui/TechIcon";
 import "./Skills.css";
 
 type SkillCategory = "frontend" | "backend" | "database" | "tools";
@@ -72,7 +73,11 @@ const Skills: React.FC = () => {
                                     >
                                         <div className="skill-info">
                                             <span className="skill-icon">
-                                                {skillIcons[skill.name] || "⚙️"}
+                                                <TechIcon
+                                                    name={skill.name}
+                                                    size={24}
+                                                    className="tech-icon"
+                                                />
                                             </span>
                                             <span className="skill-name">
                                                 {skill.name}

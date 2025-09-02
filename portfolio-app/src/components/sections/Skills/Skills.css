@@ -94,6 +94,35 @@
     text-align: center;
 }
 
+.tech-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover .tech-icon {
+    transform: scale(1.1);
+}
+
+.tech-icon-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-lavender);
+    color: var(--text-gray);
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover .tech-icon-fallback {
+    background-color: var(--vibrant-blue);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
 .skill-name {
     font-weight: 600;
     color: var(--dark-gray);
