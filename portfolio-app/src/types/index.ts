@@ -74,6 +74,14 @@ export interface Activity {
     type: "volunteer" | "achievement" | "activity";
 }
 
+export interface FormField {
+    name: string;
+    label: string;
+    type: "text" | "email" | "textarea";
+    required: boolean;
+    rows?: number;
+}
+
 // Contact types
 export interface ContactInfo {
     email: string;
