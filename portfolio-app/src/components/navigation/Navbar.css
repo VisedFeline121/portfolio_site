@@ -91,6 +91,16 @@
 
 .nav-icon {
     font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon svg,
+.nav-icon img {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
 }
 
 .cv-download-btn {
@@ -146,7 +156,9 @@
 }
 
 .cv-icon {
-    font-size: 1.1rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
 }
 
 /* Theme toggle button */
@@ -165,6 +177,13 @@
 .theme-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+.theme-toggle svg,
+.theme-toggle img {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
 }
 
 @media (max-width: 1200px) {

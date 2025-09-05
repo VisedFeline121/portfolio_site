@@ -50,6 +50,13 @@
 .timeline-icon {
     font-size: 1.5rem;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-icon img {
+    filter: invert(1) brightness(0) saturate(100%);
 }
 
 .timeline-content h3 {

@@ -119,7 +119,7 @@ export interface ButtonProps {
 
 export interface NavLinkProps {
     sectionId: SectionId;
-    icon: string;
+    icon: React.ReactNode;
     label: string;
     onClick: (sectionId: SectionId) => void;
 }

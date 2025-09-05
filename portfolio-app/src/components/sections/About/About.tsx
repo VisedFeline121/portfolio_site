@@ -1,6 +1,11 @@
 import React from "react";
+import BackendIcon from "../../../assets/icons/ui/about/backend.svg";
+import FrontendIcon from "../../../assets/icons/ui/about/frontend.svg";
+import LearningIcon from "../../../assets/icons/ui/about/learning.svg";
+import StackIcon from "../../../assets/icons/ui/about/stack.svg";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import { Container } from "../../layout/Container";
+import { Icon } from "../../ui/Icon";
 import "./About.css";
 
 const About: React.FC = () => {
@@ -22,7 +27,13 @@ const About: React.FC = () => {
                     <div className="timeline">
                         <div className="timeline-item">
                             <div className="timeline-point">
-                                <div className="timeline-icon">📱</div>
+                                <div className="timeline-icon">
+                                    <Icon
+                                        src={StackIcon}
+                                        alt="Full Stack"
+                                        size={24}
+                                    />
+                                </div>
                             </div>
                             <div className="timeline-content">
                                 <h3>Full Stack Development</h3>
@@ -40,7 +51,13 @@ const About: React.FC = () => {
 
                         <div className="timeline-item">
                             <div className="timeline-point">
-                                <div className="timeline-icon">💻</div>
+                                <div className="timeline-icon">
+                                    <Icon
+                                        src={BackendIcon}
+                                        alt="Backend"
+                                        size={24}
+                                    />
+                                </div>
                             </div>
                             <div className="timeline-content">
                                 <h3>Backend Expertise</h3>
@@ -59,7 +76,13 @@ const About: React.FC = () => {
 
                         <div className="timeline-item">
                             <div className="timeline-point">
-                                <div className="timeline-icon">🎨</div>
+                                <div className="timeline-icon">
+                                    <Icon
+                                        src={FrontendIcon}
+                                        alt="Frontend"
+                                        size={24}
+                                    />
+                                </div>
                             </div>
                             <div className="timeline-content">
                                 <h3>Frontend Development</h3>
@@ -76,7 +99,13 @@ const About: React.FC = () => {
 
                         <div className="timeline-item">
                             <div className="timeline-point">
-                                <div className="timeline-icon">✅</div>
+                                <div className="timeline-icon">
+                                    <Icon
+                                        src={LearningIcon}
+                                        alt="Learning"
+                                        size={24}
+                                    />
+                                </div>
                             </div>
                             <div className="timeline-content">
                                 <h3>Continuous Learning</h3>
