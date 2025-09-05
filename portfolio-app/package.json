@@ -1,5 +1,6 @@
 {
     "name": "portfolio-app",
+    "homepage": "https://VisedFeline121.github.io/portfolio_site/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -8,10 +9,13 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "info": "echo 'Portfolio Project - React/TypeScript with simple components, data separation, and clean code patterns. See PROJECT_GUIDELINES.md for conventions.'"
+        "info": "echo 'Portfolio Project - React/TypeScript with simple components, data separation, and clean code patterns. See PROJECT_GUIDELINES.md for conventions.'",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@formspree/react": "^3.0.0",
+        "gh-pages": "^6.3.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1"
     },
@@ -26,6 +30,7 @@
         "globals": "^16.3.0",
         "typescript": "~5.8.3",
         "typescript-eslint": "^8.39.1",
-        "vite": "^7.1.2"
+        "vite": "^7.1.2",
+        "vite-plugin-svgr": "^4.5.0"
     }
 }
