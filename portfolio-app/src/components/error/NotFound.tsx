@@ -1,8 +1,10 @@
 import React from "react";
+import HomeIcon from "../../assets/icons/ui/navbar/home.svg";
 import { SECTIONS } from "../../constants";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { Container } from "../layout/Container";
 import { Button } from "../ui/Button";
+import { Icon } from "../ui/Icon";
 import "./NotFound.css";
 
 const NotFound: React.FC = () => {
@@ -34,7 +36,13 @@ const NotFound: React.FC = () => {
 
                     <div className="not-found-actions">
                         <Button className="btn-primary" onClick={goToHome}>
-                            🏠 Back to Home
+                            <Icon
+                                src={HomeIcon}
+                                alt="Home"
+                                size={18}
+                                className="mr-2"
+                            />
+                            Back to Home
                         </Button>
                     </div>
 

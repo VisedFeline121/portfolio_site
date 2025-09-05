@@ -90,6 +90,10 @@
     text-decoration: none;
 }
 
+.mr-2 {
+    margin-right: 8px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .not-found-number {
