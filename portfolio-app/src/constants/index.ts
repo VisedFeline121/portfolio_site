@@ -21,7 +21,12 @@ export const SECTIONS = {
 } as const;
 
 // Route validation constants
-export const VALID_PATHS = ["/", "/index.html", ""] as const;
+export const VALID_PATHS = [
+    "/",
+    "/index.html",
+    "",
+    "/portfolio_site/",
+] as const;
 export const VALID_HASHES = [
     "#hero",
     "#about",
