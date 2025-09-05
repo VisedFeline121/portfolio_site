@@ -25,7 +25,6 @@ export const projects: Project[] = [
             "Adobe Premiere Pro":
                 "Learned video editing and rendering for the extension's demo video",
         },
-        githubUrl: "https://github.com/VisedFeline121/pdf-bookmark-manager",
         liveUrl: "https://pdfbookmarkmanager.com/",
         metrics: {
             users: 38,

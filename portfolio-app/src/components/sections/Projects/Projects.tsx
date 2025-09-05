@@ -90,14 +90,16 @@ const Projects: React.FC = () => {
                                 )}
                                 <div className="project-spacer"></div>
                                 <div className="project-links">
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="project-link"
-                                    >
-                                        GitHub
-                                    </a>
+                                    {project.githubUrl && (
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-link"
+                                        >
+                                            GitHub
+                                        </a>
+                                    )}
                                     {project.liveUrl && (
                                         <a
                                             href={project.liveUrl}
