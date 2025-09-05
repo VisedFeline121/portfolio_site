@@ -26,7 +26,7 @@ export interface Project {
     description: string;
     technologies: string[];
     technologyUsage: Record<string, string>;
-    githubUrl: string;
+    githubUrl?: string;
     liveUrl?: string;
     image?: string;
     metrics?: ProjectMetrics;
