@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://or-prager-portfolio.vercel.app/sitemap.xml
+
+# Disallow any private or temporary files
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.log
+Disallow: /*.tmp
