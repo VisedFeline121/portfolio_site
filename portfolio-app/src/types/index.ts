@@ -11,6 +11,15 @@ export type SectionId =
     | "contact";
 
 // Project types
+export interface ProjectMetrics {
+    users?: number;
+    revenue?: number;
+    downloads?: number;
+    rating?: string;
+    capacity?: string;
+    pricing?: string;
+}
+
 export interface Project {
     id: number;
     title: string;
@@ -20,6 +29,7 @@ export interface Project {
     githubUrl: string;
     liveUrl?: string;
     image?: string;
+    metrics?: ProjectMetrics;
 }
 
 // Technology types

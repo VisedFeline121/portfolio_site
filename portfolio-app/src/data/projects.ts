@@ -3,31 +3,36 @@ import type { Project } from "../types";
 export const projects: Project[] = [
     {
         id: 1,
-        title: "E-Commerce Platform",
+        title: "PDF Bookmark Manager",
         description:
-            "A full-stack e-commerce application built with React, Node.js, and PostgreSQL. Features include user authentication, product management, shopping cart, and payment integration.",
+            "A Chrome extension that transforms PDF reading by allowing users to create and manage up to 5000 bookmarks across multiple PDFs. Users can jump instantly to any section with custom titles and offline functionality. Perfect for students, researchers, and professionals.",
         technologies: [
-            "React",
-            "TypeScript",
-            "Node.js",
-            "Express",
-            "PostgreSQL",
-            "Stripe",
+            "Chrome Extension API",
+            "JavaScript",
+            "HTML/CSS",
+            "Landing Page Development",
+            "Adobe Premiere Pro",
         ],
         technologyUsage: {
-            React: "Frontend UI with product catalog, shopping cart, and user dashboard components",
-            TypeScript:
-                "Type safety for API responses, user data, and product interfaces",
-            "Node.js":
-                "Backend server handling user authentication and product management",
-            Express:
-                "RESTful API endpoints for products, users, and order processing",
-            PostgreSQL:
-                "Database storing user accounts, product inventory, and order history",
-            Stripe: "Secure payment processing for checkout and subscription management",
+            "Chrome Extension API":
+                "Built native browser integration for seamless PDF bookmarking and navigation",
+            JavaScript:
+                "Core logic for bookmark management, PDF page navigation, and offline storage",
+            "HTML/CSS":
+                "Clean, intuitive user interface for bookmark management and organization",
+            "Landing Page Development":
+                "Professional marketing website with features showcase and pricing",
+            "Adobe Premiere Pro":
+                "Learned video editing and rendering for the extension's demo video",
         },
-        githubUrl: "https://github.com/yourusername/ecommerce-platform",
-        liveUrl: "https://ecommerce-demo.com",
+        githubUrl: "https://github.com/VisedFeline121/pdf-bookmark-manager",
+        liveUrl: "https://pdfbookmarkmanager.com/",
+        metrics: {
+            users: 38,
+            revenue: 1,
+            capacity: "5000 bookmarks",
+            pricing: "Free + $2.49 Pro Tier",
+        },
     },
     {
         id: 2,
