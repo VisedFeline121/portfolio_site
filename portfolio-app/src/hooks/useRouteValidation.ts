@@ -9,41 +9,36 @@ export const useRouteValidation = () => {
             const path = window.location.pathname;
             const hash = window.location.hash;
 
-            const isValidPath = VALID_PATHS.includes(path as any);
-            const isValidHash = VALID_HASHES.includes(hash as any);
+            // Simple validation: allow root paths and valid hashes
+            const isValidRoute =
+                VALID_PATHS.includes(path as any) &&
+                (hash === "" || VALID_HASHES.includes(hash as any));
 
-            // Show 404 if path is invalid OR if there's an invalid hash
-            if (!isValidPath || (hash !== "" && !isValidHash)) {
+            if (!isValidRoute) {
                 setShow404(true);
-            } else {
-                setShow404(false);
-                // Handle hash navigation
-                if (hash && hash !== "") {
-                    setTimeout(() => {
-                        const element = document.getElementById(
-                            hash.substring(1)
-                        );
-                        if (element) {
-                            // Get navbar height and calculate proper scroll position
-                            const navbar = document.querySelector(
-                                ".navbar"
-                            ) as HTMLElement;
-                            const navbarHeight = navbar
-                                ? navbar.offsetHeight
-                                : 80;
+                return;
+            }
 
-                            // Calculate the target scroll position
-                            const elementTop = element.offsetTop;
-                            const targetScrollTop = elementTop - navbarHeight;
+            setShow404(false);
 
-                            // Smooth scroll to the correct position
-                            window.scrollTo({
-                                top: targetScrollTop,
-                                behavior: "smooth",
-                            });
-                        }
-                    }, 100);
-                }
+            // Handle hash navigation
+            if (hash && hash !== "") {
+                setTimeout(() => {
+                    const element = document.getElementById(hash.substring(1));
+                    if (element) {
+                        const navbar = document.querySelector(
+                            ".navbar"
+                        ) as HTMLElement;
+                        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                        const elementTop = element.offsetTop;
+                        const targetScrollTop = elementTop - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetScrollTop,
+                            behavior: "smooth",
+                        });
+                    }
+                }, 100);
             }
         };
 

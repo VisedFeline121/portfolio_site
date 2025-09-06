@@ -26,6 +26,7 @@ export const VALID_PATHS = [
     "/index.html",
     "",
     "/portfolio_site/",
+    "/portfolio_site",
 ] as const;
 export const VALID_HASHES = [
     "#hero",
