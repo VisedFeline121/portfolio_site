@@ -20,6 +20,8 @@ export const SECTIONS = {
     CONTACT: "contact",
 } as const;
 
+export const ROOT_PATH = "/portfolio_site";
+
 // Route validation constants
 export const VALID_PATHS = [
     "/",

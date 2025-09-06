@@ -1,6 +1,6 @@
 import React from "react";
 import HomeIcon from "../../assets/icons/ui/navbar/home.svg";
-import { SECTIONS } from "../../constants";
+import { ROOT_PATH, SECTIONS } from "../../constants";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { Container } from "../layout/Container";
 import { Button } from "../ui/Button";
@@ -12,7 +12,7 @@ const NotFound: React.FC = () => {
 
     const goToHome = () => {
         // Navigate to the home page
-        window.location.href = "/";
+        window.location.href = ROOT_PATH;
     };
 
     return (
