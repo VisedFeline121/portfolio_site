@@ -27,7 +27,7 @@ export const projects: Project[] = [
         },
         liveUrl: "https://pdfbookmarkmanager.com/",
         metrics: {
-            users: 38,
+            users: 41,
             revenue: 1,
             capacity: "5000 bookmarks",
             pricing: "Free + $2.49 Pro Tier",
@@ -35,55 +35,51 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        title: "Task Management App",
+        title: "Portfolio Website",
         description:
-            "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+            "A professional portfolio website showcasing full-stack development skills with modern React architecture, custom routing, and GitHub Pages deployment.",
         technologies: [
             "React",
             "TypeScript",
-            "Python",
-            "FastAPI",
-            "WebSocket",
-            "Redis",
+            "Vite",
+            "CSS Grid",
+            "GitHub Pages",
+            "Custom Hooks",
         ],
         technologyUsage: {
-            React: "Interactive task boards with drag-and-drop functionality and real-time updates",
+            React: "Component-based architecture with custom hooks for state management and animations",
             TypeScript:
-                "Type definitions for task objects, user permissions, and API contracts",
-            Python: "Backend logic for task processing and team collaboration features",
-            FastAPI:
-                "High-performance API with automatic documentation for task CRUD operations",
-            WebSocket:
-                "Real-time task updates and live collaboration between team members",
-            Redis: "Caching frequently accessed task data and managing user sessions",
+                "Type safety for all components, interfaces, and data structures",
+            Vite: "Fast development server and optimized production builds with code splitting",
+            "CSS Grid":
+                "Responsive layout system with custom properties for theming",
+            "GitHub Pages":
+                "Automated deployment pipeline with SSH authentication",
+            "Custom Hooks":
+                "Reusable logic for intersection observer, scroll management, and theme handling",
         },
-        githubUrl: "https://github.com/yourusername/task-manager",
-        liveUrl: "https://task-manager-demo.com",
+        githubUrl: "https://github.com/VisedFeline121/portfolio_site",
+        liveUrl: "https://visedfeline121.github.io/portfolio_site/",
     },
     {
         id: 3,
-        title: "Weather Dashboard",
+        title: "Excer",
         description:
-            "A weather application that displays current weather and forecasts using external APIs. Features include location-based weather, 7-day forecast, and weather alerts.",
-        technologies: [
-            "React",
-            "TypeScript",
-            "OpenWeather API",
-            "Chart.js",
-            "CSS Grid",
-        ],
+            "A dashboard currently in development that displays the most talked about penny stocks from Reddit communities, providing stock information and links to popular discussions to help users discover trending investment opportunities.",
+        technologies: ["Next.js", "React", "JavaScript", "Reddit API"],
         technologyUsage: {
-            React: "Weather dashboard UI with location search and forecast display components",
+            "Next.js":
+                "Full-stack framework with server-side rendering for optimal performance and SEO",
+            React: "Interactive dashboard UI with real-time stock data display and filtering components",
             TypeScript:
-                "Type safety for weather data structures and API responses",
-            "OpenWeather API":
-                "Real-time weather data and 7-day forecast information",
+                "Type safety for stock data structures, Reddit API responses, and user interactions",
+            "Reddit API":
+                "Fetching trending posts and sentiment data from penny stock subreddits",
+            "Stock Data API":
+                "Real-time stock prices, market data, and company information",
             "Chart.js":
-                "Interactive charts displaying temperature trends and weather patterns",
-            "CSS Grid":
-                "Responsive layout for weather cards and dashboard organization",
+                "Interactive charts displaying stock price trends and sentiment analysis",
         },
-        githubUrl: "https://github.com/yourusername/weather-dashboard",
-        liveUrl: "https://weather-dashboard-demo.com",
+        githubUrl: "https://github.com/VisedFeline121/excer",
     },
 ];
