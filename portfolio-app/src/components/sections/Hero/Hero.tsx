@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 <p className="hero-description">
                     Experienced developer passionate about building scalable web
                     applications and delivering exceptional user experiences.
-                    Specializing in modern technologies with a focus on clean
+                    Experienced in modern technologies with a focus on clean
                     code and best practices.
                 </p>
                 <div className="hero-buttons">

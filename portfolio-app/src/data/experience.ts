@@ -37,12 +37,4 @@ export const activities: Activity[] = [
             "Tutored high school students in mathematics to prepare them for their Bagrut exams. Demonstrated strong communication skills and ability to explain complex concepts clearly to students.",
         type: "volunteer",
     },
-    {
-        id: 2,
-        title: "Marathon Runner",
-        period: "2022",
-        description:
-            "Successfully completed my first full marathon, demonstrating discipline, goal-setting, and perseverance in achieving long-term objectives.",
-        type: "achievement",
-    },
 ];

@@ -38,9 +38,9 @@ const About: React.FC = () => {
                             <div className="timeline-content">
                                 <h3>Full Stack Development</h3>
                                 <p>
-                                    I'm a Full Stack Developer with 4+ years of
+                                    I'm a Full Stack Developer with 3+ years of
                                     experience in designing and developing
-                                    scalable web applications. My expertise
+                                    scalable web applications. My experience
                                     spans both backend and frontend development,
                                     allowing me to create comprehensive
                                     solutions that deliver exceptional user
@@ -62,14 +62,13 @@ const About: React.FC = () => {
                             <div className="timeline-content">
                                 <h3>Backend Expertise</h3>
                                 <p>
-                                    On the backend, I specialize in Python
-                                    development, building microservices, and
-                                    working with technologies like Django,
-                                    MySQL, RabbitMQ, Docker, and Splunk. I have
-                                    extensive experience in system design and
-                                    integration, working with both technical and
-                                    non-technical stakeholders to deliver
-                                    solutions that meet diverse requirements.
+                                    I work primarily with Python, building
+                                    services and integrations supported by tools
+                                    like MySQL, RabbitMQ, Docker, and Splunk.
+                                    I’ve also worked on system design and
+                                    integration projects that required close
+                                    collaboration with both technical and
+                                    non-technical teams.
                                 </p>
                             </div>
                         </div>
@@ -87,12 +86,11 @@ const About: React.FC = () => {
                             <div className="timeline-content">
                                 <h3>Frontend Development</h3>
                                 <p>
-                                    For frontend development, I work with modern
-                                    technologies including React, TypeScript,
-                                    HTML, and CSS. I'm passionate about creating
-                                    intuitive user interfaces and ensuring
-                                    seamless integration between frontend and
-                                    backend systems.
+                                    I have experience developing frontend
+                                    components using React, TypeScript, HTML,
+                                    and CSS — mainly for integrating backend
+                                    services and building simple, functional
+                                    interfaces.
                                 </p>
                             </div>
                         </div>
@@ -110,12 +108,11 @@ const About: React.FC = () => {
                             <div className="timeline-content">
                                 <h3>Continuous Learning</h3>
                                 <p>
-                                    I'm committed to continuous learning and
-                                    staying current with emerging technologies.
-                                    My experience includes researching and
-                                    implementing new technologies, working with
-                                    partner teams, and integrating systems
-                                    across different platforms.
+                                    I care deeply about improving as a
+                                    developer. I regularly explore new
+                                    technologies, refine my development
+                                    practices, and learn from real-world
+                                    projects and collaborations.
                                 </p>
                             </div>
                         </div>
